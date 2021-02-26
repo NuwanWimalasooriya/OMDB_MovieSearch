@@ -1,0 +1,28 @@
+.container-fluid{
+    width: 100%;
+    margin: 0 auto;
+}
+.row{
+    width: 100%;
+}
+.col-lg-1{
+    width: 10%;
+}
+.col-lg-2{
+    width: 20%;
+}
+.col-lg-25{
+    width: 25%;
+}
+.col-lg-75{
+    width: 75%;
+}
+.col-lg-8{
+    width: 80%;
+}
+
+@media only screen and (max-width: 1024px) {
+    .col-sm-10{
+        width: 100%;
+    }
+}

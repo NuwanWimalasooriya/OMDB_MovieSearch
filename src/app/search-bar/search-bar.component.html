@@ -1,0 +1,30 @@
+<div class="col s12">
+  <form >
+    <div class="row">
+
+    </div>
+
+    <label>OMDB Search</label>
+    <input #input class="form-control" placeholder="Search a movie"/>
+     <button mdbBtn type="button" color="info" outline="true" mdbWavesEffect
+         (click)="searchQuery(input.value,1)" >
+       Search
+      </button>
+
+  </form>
+  <div *ngIf="!showingMovie" class="row">
+
+    <app-movie-search-item *ngFor="let movie of searchResults | paginate: { itemsPerPage: 10, currentPage: p,totalItems: movieService.totalRecords }"
+   (click)="setCurrentMovie(movie)" [movie]="movie"></app-movie-search-item>
+  </div>
+  <h3 *ngIf="!fetching && searchResults.length === 0 && input.length > 0" [ngStyle]="{'text-align': 'center'}">No results found for {{input}}</h3>
+  <div *ngIf="searchResults.length > 0 ">
+  <pagination-controls (pageChange)="searchQuery(input.value, $event)"></pagination-controls>
+  </div>
+
+
+
+
+
+</div>
+
